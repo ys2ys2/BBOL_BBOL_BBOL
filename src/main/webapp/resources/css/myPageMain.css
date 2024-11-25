@@ -1,0 +1,606 @@
+/* 여기어때 잘난체 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Pretendard */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+/*강원 교육 튼튼체 */
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*플라이트 산스  */
+@font-face {
+    font-family: 'FlightSans-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/FlightSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0 auto;
+}
+
+
+.navigation {
+    position: absolute;
+    top: 130px; /* 뷰포트 기준으로 상단에서 120px */
+    left: 340px; /* 뷰포트 기준으로 왼쪽에서 250px */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    z-index: 1000; /* 다른 요소보다 위에 배치 */
+    background-color: white; /* 배경색 설정 (필요에 따라 조정) */
+}
+
+.navigation a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Pretendard-Regular';
+    font-weight: 800;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 배경색과 크기 변화에 대한 애니메이션 */
+}
+
+.navigation a:hover {
+    transform: translateY(-4px); /* 호버 시 살짝 위로 이동하는 효과 */
+    color: #483D8B;
+}
+
+/* 선택된 탭에 색상 주기 */
+.navigation a.selected {
+      background-color: #007BFF; /* 선택된 탭의 배경색 */
+    color: white; /* 선택된 탭의 글자색 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 선택된 탭에 그림자 추가 */
+    border: 2px solid #0056b3; /* 선택된 탭의 테두리 추가 */
+    /* 추가적인 스타일로, 선택된 탭을 더 돋보이게 할 수 있습니다. */
+}
+.container {
+	display: flex;
+	width: 90%;
+	margin-top: 130px; /* 네비게이션 아래로 여유 공간 추가 */
+}
+
+.profile-section {
+    width: 16%;
+    padding: 20px;
+    position: absolute;
+    left: 10px; /* 왼쪽에 고정 */
+    top: 150px; /* 상단에서 150px 아래로 */
+}
+
+.profile-section h4 {
+	position: relative;
+	font-family: 'yg-jalnan';
+	top: -50px; /* h3 요소를 위로 15px 이동 */
+	margin-bottom: 20px; /* 프로필 카드와의 간격 추가 */
+	text-align: left; /* 중앙 정렬 */
+}
+
+.profile-card {
+	background-color: #ffffff;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin-top: -60px;
+}
+
+
+.profile-image {
+	width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+	margin-bottom: 10px;
+}
+
+
+/* 프로필 편집 아이콘과 텍스트 컨테이너 스타일 */
+.profile-edit-container {
+    display: flex; /* 아이콘과 텍스트를 나란히 배치 */
+    align-items: center; /* 수직 가운데 정렬 */
+    color: #808080; /* 텍스트와 아이콘 색상 */
+    font-size: 13px; /* 텍스트 크기 */
+    font-family: 'Pretendard-Regular';
+    font-weight: 800;
+    margin-left: 30px;
+    margin-top:30px;
+    cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+}
+
+/* 프로필 편집 링크 스타일 */
+.profile-edit-link {
+    text-decoration: none; /* 하이퍼링크 밑줄 제거 */
+    color: gray; /* 텍스트 및 아이콘 색상을 검정색으로 변경 */
+    display: flex; /* 아이콘과 텍스트를 나란히 배치 */
+    align-items: center; /* 아이콘과 텍스트 수직 가운데 정렬 */
+    font-size: 12px; /* 텍스트 크기 */
+    cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+     margin-left: 7px;
+}
+
+.profile-edit-link i {
+    margin-right: 8px; /* 아이콘과 텍스트 사이 간격 */
+    font-size: 10px; /* 아이콘 크기 */
+}
+
+.profile-edit-link:hover {
+    transform: translateY(-4px); /* 호버 시 살짝 위로 이동하는 효과 */
+    color: #483D8B;
+}
+
+
+
+.nickname-header {
+    font-size: 18px; /* 글자 크기 */
+    color: black; /* 글자 색상 */
+    margin: 15px 0; /* 상하 10px 여백, 좌우 0 */
+    text-align: center; /* 가운데 정렬 */
+    font-family: 'FlightSans-Bold';
+}
+
+
+
+/* 오른쪽 하단에 고정된 이미지 버튼 스타일 */
+.floating-button {
+    position: fixed;  /* 화면에 고정 */
+    bottom: 30px;     /* 하단에서 20px 띄움 */
+    right: 50px;      /* 오른쪽에서 20px 띄움 */
+    width: 50px;      /* 버튼 이미지 크기 */
+    height: 50px;
+    z-index: 1000;    /* 다른 요소 위에 표시되도록 설정 */
+    cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;  /* 이미지가 원형으로 보이도록 설정 */
+   
+}
+
+
+/* 호버 효과 추가 */
+.floating-button:hover {
+    animation: sparkle 0.5s infinite; /* 반짝이는 애니메이션 추가 */
+}
+
+/* 반짝이는 효과를 위한 애니메이션 정의 */
+@keyframes sparkle {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 시작 시 약한 그림자 */
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 1); /* 중간에 더 강한 그림자 */
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* 끝날 때 다시 약해짐 */
+    }
+}
+
+
+/*여기 위에까지는 고정적인 영역으로 수정x  */
+
+
+
+
+
+/* 전체 레이아웃 */
+.content-section-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* 각 섹션 간의 간격 */
+    margin-left: 300px; /* 전체적으로 오른쪽으로 이동 */
+    width: calc(100% - 300px); /* 전체 너비에서 마진을 뺀 값 */
+    margin-top: 150px; /* 하단으로 150px 내려줌 */
+}
+
+/* 상단 여행 섹션 - 다가오는 여행과 지난 여행을 좌우 배치 */
+.travel-section {
+   display: flex;
+    justify-content: flex-start; /* 두 섹션을 왼쪽에 배치 */
+    gap: 20px; /* 두 섹션 사이의 간격을 고정된 값으로 설정 */
+    width: 100%; /* 전체 너비를 사용 */
+    margin-left: 40px; /* 왼쪽으로부터 40px 이동 */
+   
+}
+
+.section-upcoming-trips, 
+.section-past-trips {
+    width: 40%; /* 박스 너비를 40%로 설정 */
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    box-sizing: border-box;
+    position: relative; /* 요소들이 더 안정적으로 위치하게 설정 */
+     /* 내 게시글과의 간격을 맞추기 위한 하단 여백 */
+}
+
+
+.upcoming-trips-title, 
+.past-trips-title {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    font-weight: 800;
+    font-size:23px;
+    position: relative; /* 상대적 위치 설정 */
+    top: -13px; /* 위로 10px 이동, 원하는 값으로 조정 가능 */
+    margin-bottom: 0; /* 하단 여백 제거 (필요에 따라 조정 가능) */
+    width: 150px;
+    
+}
+.latest-past-trip{
+	background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 5px;
+    width: 70%; /* 게시물 너비를 100%로 설정 */
+    height:45%; 
+    background-color: rgba(255, 223, 0.1, 0.2); /* 투명한 노란색 배경 */
+    box-shadow: 
+        0px 4px 8px rgba(255, 223, 0.3, 0.3),   /* 첫 번째 그림자: 가까운 밝은 그림자 */
+        0px 8px 16px rgba(0.10, 0.10, 0.10, 0.10);     /* 두 번째 그림자: 멀리 있는 더 어두운 그림자 */
+    position: relative; /* 상대적 위치 설정 */
+    top: 15px;
+}
+
+.latest-past-trip-title{
+	font-family: 'FlightSans-Bold';
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1;
+    position: relative; /* 요소를 자기 기준으로 이동 */
+    top: -10px; /* 아래로 10px 이동 */
+    left: 17px;
+    color: black;
+	
+}
+
+.latest-past-trip-date{
+	font-family: 'FlightSans-Bold';
+    font-weight: 700;
+    font-size: 14px;
+    position: relative; /* 요소를 자기 기준으로 이동 */
+    top: -10px; /* 아래로 10px 이동 */
+    left: 20px;
+	
+}
+
+
+
+.upcoming-trip-item{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 5px;
+    width: 70%; /* 게시물 너비를 100%로 설정 */
+    height:45%; 
+    background-color: rgba(255, 223, 0.1, 0.2); /* 투명한 노란색 배경 */
+     box-shadow: 
+        0px 4px 8px rgba(255, 223, 0.3, 0.3),   /* 첫 번째 그림자: 가까운 밝은 그림자 */
+        0px 8px 16px rgba(0.10, 0.10, 0.10, 0.10);     /* 두 번째 그림자: 멀리 있는 더 어두운 그림자 */
+    position: relative; /* 상대적 위치 설정 */
+    top: 15px;
+}
+
+
+.days-remaining{
+	font-family: 'GangwonEduPowerExtraBoldA';
+    font-weight: 500;
+    position: relative; /* 상대적 위치 설정 */
+    top: -35px;
+	left: 10px;
+	color: darkkhaki;
+}
+
+
+.upcoming-trip-item-title{
+	font-family: 'FlightSans-Bold';
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1;
+    position: relative; /* 요소를 자기 기준으로 이동 */
+    top: -10px; /* 아래로 10px 이동 */
+    left: 17px;
+    color: black;
+}
+
+.upcoming-trip-item-date{
+	font-family: 'FlightSans-Bold';
+    font-weight: 700;
+    font-size: 14px;
+    position: relative; /* 요소를 자기 기준으로 이동 */
+    top: -10px; /* 아래로 10px 이동 */
+    left: 20px;
+}
+
+
+/* .upcoming-trip-item-date::before {
+    content: "◾"; 불릿 대신 ◾ 사용
+    color: #c96e42; 불릿 색상
+    font-size: 15px; 불릿 크기
+    position: absolute; 불릿의 위치를 절대적으로 조정
+    left: -16px; 불릿의 위치 조정
+    top: 50%;
+    transform: translateY(-50%); 불릿을 세로로 중앙 정렬
+} */
+
+.add-trip-btn {
+    background-color: black; /* 버튼 배경색 */
+    color: white; /* 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 10px 10px; /* 상하 좌우 여백 */
+    font-size: 12px; /* 글자 크기 */
+    cursor: pointer; /* 포인터 커서 */
+    margin-top: -50px; /* 상단 여백 */
+    float: right; /* 버튼을 오른쪽으로 배치 */
+    font-family: 'FlightSans-Bold';
+    font-weight: 600;
+    font-size: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 호버 시 부드러운 애니메이션 효과 */
+}
+
+.add-trip-btn:hover {
+    background-color: #45a049; /* 호버 시 색상 변경 */
+     transform: translateY(-2px); /* 호버 시 살짝 위로 이동하는 효과 */
+}
+
+/* 게시글과 저장목록을 감싸는 컨테이너 */
+.post-and-saved-container {
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 좌우로 정렬 */
+    width: 83%; /* 전체 너비 사용 */
+    gap: 10px; /* 간격 설정 */
+    margin-left: 42px; /* 오른쪽으로 50px 이동 */
+}
+
+/* 내 게시물 섹션 */
+.my-journeys-custom {
+    width: 48%; /* 너비를 48%로 설정하여 두 섹션 간의 여유 공간 생성 */
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px; /* 내부 여백 줄이기 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    max-height: 300px; /* 최대 높이 설정 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 가능 */
+}
+
+.my-journeys-title {
+      font-family: 'GangwonEduPowerExtraBoldA';
+    font-weight: 800;
+    font-size:23px;
+    margin-bottom: 10px;
+	position: relative; /* 상대적 위치 설정 */
+    top: -20px; /* 위로 10px 이동, 원하는 값으로 조정 가능 */
+    margin-bottom: 0; /* 하단 여백 제거 (필요에 따라 조정 가능) */
+    width: 150px;
+
+}
+
+.my-journeys-list {
+    display: flex;
+    gap: 20px; /* 게시물 간의 간격 */
+    flex-wrap: wrap; /* 게시물들이 여러 열로 표시되도록 */
+}
+
+.my-journeys-btn{
+	background-color: black; /* 버튼 배경색 */
+    color: white; /* 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 10px 10px; /* 상하 좌우 여백 */
+    font-size: 12px; /* 글자 크기 */
+    cursor: pointer; /* 포인터 커서 */
+    margin-top: -50px; /* 상단 여백 */
+    float: right; /* 버튼을 오른쪽으로 배치 */
+    font-family: 'Pretendard-Regular'; /* 폰트 */
+    font-weight: 600;
+    font-size: 12px;
+	
+	
+}
+.my-journeys-btn:hover {
+    background-color: #45a049; /* 호버 시 색상 변경 */
+}
+
+.post-item-custom {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%; /* 게시물 너비를 100%로 설정 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.post-writer-custom{
+	font-family: 'Pretendard-Regular'; /* 폰트 */
+    font-weight: 600;
+    font-size: 13px;
+    color: black;
+    margin-bottom:12px;
+	
+}
+
+.post-date-custom{
+	font-family: 'Pretendard-Regular'; /* 폰트 */
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom:20px;
+}
+
+.post-content-custom {
+    margin-bottom: 10px;
+    font-family: 'Pretendard-Regular'; /* 폰트 */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+
+
+
+/* 나의 저장목록 섹션 */
+.m_content-section-header-custom {
+    width: 48%; /* 너비를 48%로 설정하여 두 섹션 간의 여유 공간 생성 */
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px; /* 내부 여백 줄이기 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    max-height: 300px; /* 최대 높이 설정 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 가능 */
+}
+
+.m_content-section-header-custom h3{
+	font-family: 'GangwonEduPowerExtraBoldA';
+    font-weight: 800;
+    font-size:23px;
+	position: relative; /* 상대적 위치 설정 */
+    top: -20px; /* 위로 10px 이동, 원하는 값으로 조정 가능 */
+	
+}
+
+/* 각 저장 아이템 스타일 */
+.m_saved-item {
+    display: flex; /* 수평 배치 */
+    align-items: center; /* 수직 가운데 정렬 */
+    margin-bottom: 15px; /* 아래쪽 여백 */
+}
+
+
+
+
+/* 저장목록 이미지 스타일 */
+.m_saved-image-custom {
+    width: 100px; /* 이미지 너비 조정 */
+    height: 80px; /* 이미지 높이 조정 */
+    object-fit: cover; /* 비율 유지하며 자르기 */
+    border-radius: 5px; /* 모서리 둥글게 */
+}
+
+
+/* 나의 저장목록 정보 스타일 */
+.m_saved-info-custom {
+    text-align: left; 
+	margin-left: 19px;
+	margin-top: -8px;
+}
+
+/* 나의 저장목록 항목 스타일 */
+.m_saved-item-custom {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    margin-bottom: 10px; /* 항목 간의 간격 */
+   	position: relative; /* 상대적 위치 설정 */
+    top: -35px; /* 위로 10px 이동, 원하는 값으로 조정 가능 */
+}
+
+
+
+.saved-addr-custom{
+	font-family: 'Pretendard-Regular';
+    font-weight: 500;
+    font-size:15px;
+}
+
+
+.saved-title-custom{
+	font-family: 'FlightSans-Bold';
+    font-size: 15px;
+}
+
+/* 추천 핫플레이스 섹션 */
+.m_hotplaces-custom {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    width: 85%; /* 너비를 100%로 설정 */
+    margin-top: 5px; /* 내 게시글과의 간격을 맞추기 위한 위쪽 여백 */
+    margin-left: 30px; /* 전체 박스와 정렬을 맞추기 위한 왼쪽 여백 */
+ 	margin-bottom: 50px;
+}
+
+.m_content-box-custom {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* 핫플레이스 간의 간격 */
+}
+
+.m_hotplace-item-custom {
+    text-align: center;
+    flex: 1;
+}
+
+.hotplace-image-custom {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.hotplaces-title-custom {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    font-weight: 800;
+    font-size:23px;
+    position: relative; /* 상대적 위치 설정 */
+    top: -20px; 
+}
+
+.highlight-font{
+font-family: 'yg-jalnan';
+font-size:25px;	
+}
+
+
+.hotplace-title-custom{
+	font-family: 'FlightSans-Bold';
+    font-weight: 600;
+    font-size: 16px;
+}
+/* 스크롤바의 너비 */
+::-webkit-scrollbar {
+    width: 15px; /* 가로 스크롤바일 경우 height로 조정 가능 */
+}
+
+/* 스크롤바의 트랙 (스크롤바의 배경) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 트랙 배경색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
+/* 스크롤바의 핸들 (사용자가 움직이는 부분) */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* 핸들 배경색 */
+    border-radius: 10px; /* 핸들 모서리 둥글게 */
+    border: 3px solid #f1f1f1; /* 핸들 테두리 */
+}
+
+/* 스크롤바 핸들에 마우스를 올렸을 때 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 호버 시 핸들 색상 */
+}
+
+
+hr {
+    border: none; /* 테두리를 없앰 */
+    margin: 0; /* 모든 여백을 없앰 */
+}
+
+
+

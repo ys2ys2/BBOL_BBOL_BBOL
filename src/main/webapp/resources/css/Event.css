@@ -1,0 +1,514 @@
+@font-face {
+    font-family: 'NanumSquareRoundB';
+    src: url('../fonts/NanumSquareRoundB.ttf') format('truetype'),
+         url('../fonts/NanumSquareRoundOTFB.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 추가 폰트 패밀리 선언 생략 */
+
+body {
+    background-color: white;
+    font-family: 'NanumSquareRoundR', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; /* 모든 텍스트 가운데 정렬 */
+}
+
+
+/* 제목 스타일 */
+.t_title-container h2 {
+    font-size: 50px;
+    font-family: 'SBAggroB', sans-serif;
+}
+
+.t_title-container h3 {
+    font-size: 18px;
+    color: #666;
+    font-family: 'SBAggroB', sans-serif;
+}
+
+.t_title-container h4 {
+    font-size: 18px;
+    display: inline-block;
+    padding-bottom: 3px;
+    background-color: rgb(198, 238, 250);
+    background-size: 30% 7px;
+}
+
+
+.t_social-icons {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.t_social-icons i {
+  font-size: 1.8em;
+  margin-right: 5px;
+}
+
+.t_social-icons .icon-text {
+  margin-right: 20px;
+}
+
+/* 네비바 설정 */
+.t_section-container {
+  background-color: #fff;
+    border-top: 1px solid #ddd; /* 위쪽 실선 추가 */
+  border-bottom: 1px solid #ddd; /* 아래쪽 실선 */
+  padding-bottom: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+      font-family: 'Noto Sans', sans-serif; /* 더 가벼운 폰트로 변경 */
+font-weight: 600; /* 약간 두꺼운 폰트 두께 설정 */
+}
+
+.t_navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 0;
+  margin: 0;
+   position: relative;
+  top: 5px; /* 글씨를 아래로 5px 이동 */
+}
+
+.t_navbar li {
+  display: inline-block;
+}
+
+.t_navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.3em;
+  padding: 8px;
+}
+
+.t_navbar a:hover {
+  color: #007bff;
+}
+
+  /* 아이콘 컨테이너 스타일 */
+  .h_icons {
+      display: flex;
+      justify-content: space-between; /* 왼쪽과 오른쪽 정렬 */
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto;
+      top: 200px; /* 전체 컨테이너를 아래로 100px 이동 */
+  }
+
+  /* 왼쪽 섹션 (좋아요 버튼) */
+  .left-icons {
+      display: flex;
+      align-items: center;
+  }
+
+  /* 오른쪽 섹션 (저장하기, 공유하기 버튼) */
+  .right-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+  }
+
+  /* 버튼 스타일 - 배경, 테두리 제거 */
+  .h_button, .f_button, .s_button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+  }
+
+  .h_button img, .f_button img, .s_button img {
+      width: 24px;
+      height: 24px;
+  }
+
+  /* 공유 팝업 스타일 */
+  .share-popup {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      padding: 10px;
+      text-align: left;
+      background-color: transparent; /* 배경색 제거 */
+      border: none; /* 테두리 제거 */
+  }
+
+  .share-popup p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #333;
+  }
+
+  /* 공유 버튼 스타일 - 배경과 테두리 제거 */
+  .share-popup button {
+      background: none;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      margin-top: 5px;
+  }
+
+  .share-popup button:hover {
+      text-decoration: underline;
+  }
+
+
+.slider-container {
+  position: relative;
+  max-width: 700px; /* 최대 너비를 1000px로 설정 */
+  height: 900px; /* 높이를 500px로 설정 */
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* 슬라이더의 전체 너비를 컨테이너에 맞춤 */
+}
+
+.slide {
+  width: 700px; /* 이미지의 고정 너비 */
+  height: 900px; /* 이미지의 고정 높이 */
+}
+
+
+/* 상세정보 제목 스타일 */
+.t_details_title {
+   text-align: left; /* 제목을 왼쪽 정렬 */
+  font-size: 1.5em;
+  margin-top: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  max-width: 1000px;
+  margin: 0 auto; /* 전체 가운데 정렬 */
+  font-family: 'Noto Sans', sans-serif; /* 더 가벼운 폰트로 변경 */
+  font-weight: 600; /* 약간 두꺼운 폰트 두께 설정 */
+   margin-top: 30px; /* 위쪽 여백을 10px로 설정 */
+}
+
+#eventDetails {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: left; /* 전체 내용을 왼쪽 정렬 */
+}
+
+.bullet {
+    margin-right: 10px; /* 점과 텍스트 사이 여백 */
+    color: black; /* 점 색상 */
+    font-size: 1.2em; /* 점 크기 조절 */
+    vertical-align: middle; /* 텍스트와 점 수직 정렬 */
+}
+
+/* 예약 사이트 주소 스타일 */
+.two-line-link {
+    margin-bottom: 10px;
+}
+
+.two-line-link strong {
+    margin-right: 5px;
+}
+
+.link-wrap {
+    display: inline; /* 링크 부분을 한 줄로 유지 */
+    color: #007bff; /* 링크 색상 */
+    text-decoration: none;
+}
+.indented-link {
+    margin-left: 130px; /* 두 번째 줄에만 왼쪽 여백 추가 */
+}
+
+.link-wrap:hover {
+    text-decoration: underline; /* 호버 시 밑줄 */
+}
+
+/* 왼쪽과 오른쪽 열 */
+.details-left,
+.details-right {
+    width: 45%;
+}
+
+.details-left p,
+.details-right p {
+    margin: 10px 0;
+    text-align: left; /* 개별 항목도 왼쪽 정렬 */
+}
+
+/* 각 항목 스타일 */
+.details-left strong,
+.details-right strong {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+/* 예약 사이트 주소를 두 줄로 만들기 */
+.two-line-link {
+    word-break: break-all;
+    white-space: normal;
+}
+
+/* 링크 스타일 */
+.details-left a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.details-left a:hover {
+    text-decoration: underline;
+}
+
+/* 위치 제목 스타일 */
+.location-section {
+  text-align: left;
+  font-size: 1.6em;
+  margin-top: 60px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Noto Sans', sans-serif; /* 더 가벼운 폰트로 변경 */
+font-weight: 600; /* 약간 두꺼운 폰트 두께 설정 */
+}
+
+.google-map {
+    width: 200px; /* 지도의 너비를 200px로 설정 */
+    height: 350px; /* 지도의 높이를 350px로 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    border: 1px solid #ddd; /* 테두리 추가 */
+    border-radius: 8px; /* 모서리 둥글게 */
+}
+
+.location-divider {
+    border: none;
+    border-top: 1px solid #ddd; /* 실선을 얇은 회색으로 설정 */
+    margin: 10px 0 20px; /* 위, 아래 간격 */
+    width: 100%; /* 실선 너비를 100%로 설정 */
+}
+
+/* 댓글 작성 폼 스타일 */
+.comment-form {
+  border: 1px solid #ddd; /* 외곽선 */
+  padding: 15px; /* 내부 여백 */
+  background-color: #f9f9f9; /* 배경색 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  max-width: 950px; /* 최대 너비 */
+  margin: 20px auto; /* 가운데 정렬 */
+  font-family: 'Noto Sans', sans-serif; /* 폰트 */
+}
+
+/* 텍스트 입력란과 버튼을 함께 정렬 */
+.textarea-container {
+  display: flex; /* 플렉스 레이아웃 사용 */
+  align-items: center; /* 세로 가운데 정렬 */
+  gap: 10px; /* 입력란과 버튼 사이 여백 */
+}
+
+/* 텍스트 입력란 스타일 */
+.textarea-container textarea {
+  width: 92%; /* 너비를 약간 줄임 */
+  height: 70px; /* 높이 */
+  border: 1px solid #ddd; /* 테두리 */
+  border-radius: 5px; /* 둥근 모서리 */
+  padding: 10px; /* 내부 여백 */
+  font-size: 14px; /* 폰트 크기 */
+  resize: none; /* 크기 조절 불가 */
+  box-sizing: border-box; /* 박스 크기 포함 */
+  font-family: 'Noto Sans', sans-serif; /* 폰트 */
+}
+
+/* 등록 버튼 스타일 */
+.comment-submit {
+  display: inline-block; /* 인라인 블록 */
+  margin-top: 10px; /* 위쪽 여백 */
+  padding: 8px 15px; /* 내부 여백 */
+  background-color: #007bff; /* 버튼 배경색 */
+  color: #fff; /* 텍스트 색상 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 포인터 커서 */
+  font-size: 14px; /* 폰트 크기 */
+  font-family: 'Noto Sans', sans-serif; /* 폰트 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  transition: background-color 0.3s ease; /* 부드러운 배경 전환 */
+}
+
+.comment-submit:hover {
+  background-color: #0056b3;
+}
+
+/* 댓글 섹션 스타일 */
+.comments-section {
+   max-width: 800px; /* 전체 댓글 섹션의 최대 너비를 800px로 */
+    margin: 20px auto;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.comment {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment-actions .comment-edit {
+    background: none;
+    border: none;
+    color: #007bff; /* 수정 버튼은 파란색 */
+    cursor: pointer;
+}
+
+.comment-actions .comment-delete {
+    background: none;
+    border: none;
+    color: red; /* 삭제 버튼은 빨간색 */
+    cursor: pointer;
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+  color: #888;
+}
+
+
+.comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    margin-top: 10px;
+    align-self: flex-end;
+    margin-left: auto;
+    gap: 10px;
+}
+
+
+.comment-actions button {
+  border: none;
+  background: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.comment-actions button:hover {
+  text-decoration: underline;
+}
+
+.comment p {
+  font-size: 14px;
+  margin-left: 50px; /* 유저 정보 옆에 정렬 */
+  color: #333;
+  margin-top: 5px;
+}
+
+/* 댓글 없음 메시지 */
+.comments-section p {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+
+/* 행사 추천 스타일 */
+/* 축제 카드 리스트 스타일 */
+/* 축제 카드 리스트 스타일 */
+.festival-slider {
+    display: flex;
+    flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    justify-content: center; /* 중앙 정렬 */
+}
+
+/* 개별 카드 스타일 */
+.festival-slide {
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+     height: 430px; /* 카드 높이를 400px로 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: filter 0.3s ease, opacity 0.3s ease;
+    filter: brightness(1); /* 기본 밝기 */
+    opacity: 1;
+    flex-shrink: 0;
+}
+
+/* 제목 스타일 - 이미지 위에 표시 */
+.festival-info {
+    text-align: center;
+    padding: 10px;
+}
+
+.festival-info h3 {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+/* 이미지 스타일 */
+.festival-slide img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+     margin-top: 20px; /* 위쪽 여백 50px 추가 */
+    margin-bottom: 10px; /* 아래쪽 여백 10px */
+}
+
+/* 버튼 스타일 */
+.action-button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    margin-bottom: 15px; /* 이미지 아래 간격 추가 */
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+

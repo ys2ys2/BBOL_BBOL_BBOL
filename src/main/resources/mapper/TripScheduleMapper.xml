@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.web.mapper.TripScheduleMapper">
+
+    <!-- 여행 일정 추가 -->
+    <insert id="insertTripSchedule" parameterType="com.human.web.vo.TripScheduleVO">
+        INSERT INTO travel_schedule 
+        (m_idx, post_id, m_email, m_nickname, period_start, period_end, title, day_number, city_name, label_number, place_name, place_address, place_latitude, place_longitude, thumbnail)
+        VALUES 
+        (#{m_idx}, #{post_id}, #{m_email}, #{m_nickname}, #{period_start}, #{period_end}, #{title}, #{day_number}, #{city_name}, #{label_number}, #{place_name}, #{place_address}, #{place_latitude}, #{place_longitude}, #{thumbnail})
+    </insert>
+
+    <!-- 최대 Post ID 조회 -->
+    <select id="getMaxPostId" resultType="Integer">
+        SELECT MAX(post_id) FROM travel_schedule
+    </select>
+
+    <!-- 여행 일정 리스트 조회 -->
+    <select id="getTripScheduleList" resultType="com.human.web.vo.TripScheduleVO">
+        SELECT 
+            id, m_idx, post_id, m_email, m_nickname, period_start, period_end, title, day_number, city_name, label_number, place_name, place_address, place_latitude, place_longitude, thumbnail
+        FROM 
+            travel_schedule
+        ORDER BY 
+            post_id, day_number, label_number
+    </select>
+
+    <!-- 여행 일정 여러 개 조회 (post_id로 조회) -->
+    <select id="getTripSchedulesById" parameterType="int" resultType="com.human.web.vo.TripScheduleVO">
+        SELECT 
+            id, m_idx, post_id, m_email, m_nickname, period_start, period_end, title, day_number, city_name, label_number, place_name, place_address, place_latitude, place_longitude, thumbnail
+        FROM 
+            travel_schedule
+        WHERE 
+            post_id = #{postId}
+        ORDER BY 
+            day_number, label_number
+    </select>
+
+</mapper>
