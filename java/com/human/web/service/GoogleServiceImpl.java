@@ -25,7 +25,7 @@ public class GoogleServiceImpl implements GoogleService {
     private final M_MemberDAO m_memberDAO;
 
     private final String CLIENT_ID = "APIKEY.apps.googleusercontent.com";
-    private final String CLIENT_SECRET = "APIKEY";
+    private final String CLIENT_SECRET = "APIKEY ";
     private final String REDIRECT_URI = "http://localhost:9090/BBOL/auth/google/callback";
 
     // Google 회원가입 처리
